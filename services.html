@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Joeman Craft</title>
+
+   
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">Joeman<span>Craft</span></div>
+
+    <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+</header>
+
+<section class="services-hero">
+    <div class="services-hero-slider">
+        <div class="services-hero-slides" id="servicesSlides">
+            <img src="images/hero/slide1.jpg" alt="Modern kitchen cupboards">
+            <img src="images/hero/slide2.jpg" alt="Built-in wardrobes">
+            <img src="images/hero/slide3.jpg" alt="TV stands & custom furniture">
+        </div>
+    </div>
+
+    <div class="services-hero-overlay"></div>
+
+    <div class="services-hero-content">
+        <h1>Our Services</h1>
+        <p>Modern cupboards, custom furniture, and quality craftsmanship</p>
+    </div>
+    <div class="services-hero-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+
+
+<section class="services-page">
+
+<div class="services-left">
+<div class="side-accent"></div>
+
+<section class="services-summary fade-in-section">
+    
+        <h2>Our Work Speaks for Itself</h2>
+        <p>
+            At JoemanCraft, every project is designed and built with precision,
+            quality, and modern style in mind. From kitchens to bedrooms, 
+            bathroom vanities, and custom furniture, we ensure every piece 
+            fits your space perfectly while enhancing your home’s beauty 
+            and functionality.
+        </p>
+        <p>
+            Our commitment to craftsmanship, soft-close finishes, and attention 
+            to detail guarantees that your furniture is not only stylish but 
+            built to last for years to come.
+        </p>
+    </div>
+</div>
+</div>
+
+   <div class="services-right">
+<div class="services-grid">
+
+        <div class="service-card">
+            <img src="images/services/kitchen.jpg" alt="Modern kitchen cupboards">
+            <h3>Kitchen Cupboards</h3>
+            <p>Custom modern kitchen cupboards designed for functionality and style.</p>
+        </div>
+<div class="service-card">
+            <img src="images/services/pedestal.jpg" alt="Pedestals">
+            <h3>Pedestals</h3>
+            <p>Functional bedside pedestals with premium finishes.</p>
+        </div>
+<div class="service-card">
+            <img src="images/services/tv-unit.jpg" alt="TV units and stands">
+            <h3>TV Units & Stands</h3>
+            <p>Modern TV units designed to elevate your living space.</p>
+        </div>
+ 
+ 
+        <div class="service-card">
+            <img src="images/services/custom.jpg" alt="Custom furniture">
+            <h3>Custom Furniture</h3>
+            <p>Unique furniture pieces designed and built to your needs.</p>
+        </div>
+
+<div class="service-card">
+            <img src="images/services/wardrobe.jpg" alt="Built-in wardrobes">
+            <h3>Bedroom Wardrobes</h3>
+            <p>Built-in wardrobes tailored to your bedroom space.</p>
+        </div>
+
+ <div class="service-card">
+            <img src="images/services/bathroom.jpg" alt="Bathroom cupboards">
+            <h3>Bathroom Vanities</h3>
+            <p>Stylish and durable bathroom cupboards with soft-close drawers.</p>
+        </div>
+</div>
+    
+</section>
+<script>
+const faders = document.querySelectorAll('.fade-in-section');
+
+const appearOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+    });
+}, appearOptions);
+
+faders.forEach(fader => {
+    appearOnScroll.observe(fader);
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const images = document.querySelectorAll(".services-hero-slides img");
+    const dots = document.querySelectorAll(".services-hero-dots .dot");
+    let index = 0;
+
+    images[0].classList.add("active");
+
+    setInterval(() => {
+        images[index].classList.remove("active");
+        dots[index].classList.remove("active");
+
+        index = (index + 1) % images.length;
+
+        images[index].classList.add("active");
+        dots[index].classList.add("active");
+    }, 4000); // calm & premium
+});
+</script>
+
+
+<section class="custom-design">
+  <div class="custom-design-container">
+
+    <h2>Designed According to Your Specifications</h2>
+
+    <p>
+      The projects displayed represent a selection of our completed work. 
+      However, we do not limit our craftsmanship to predefined designs. 
+      We develop and manufacture custom solutions based on your measurements, layout requirements, preferred materials, and personal style.
+    </p>
+
+    <p>
+      Whether you have architectural plans, inspiration images, or specific structural requirements, 
+      our team can execute your vision with precision and technical accuracy.
+    </p>
+
+    <a href="contact.html" class="custom-btn">Request a Custom Consultation</a>
+
+  </div>
+</section>
+
+
+<!-- =====================
+     VIEW GALLERY CTA
+===================== -->
+<section class="gallery-cta">
+  <div class="gallery-cta-container">
+
+    <div class="gallery-cta-icon">
+      <svg viewBox="0 0 24 24">
+        <path fill="currentColor" d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 4h8v4h-8v-4z"/>
+      </svg>
+    </div>
+
+    <h2>View Our Work</h2>
+    <p>Explore our completed projects and see the quality craftsmanship behind every design.</p>
+    <a href="gallery.html" class="gallery-btn">View Gallery</a>
+
+  </div>
+</section>
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+
+   
+    <div class="footer-col">
+      <h3 class="footer-logo">JoemanCraft Carpentry</h3>
+      <p>Crafting quality interiors with precision and passion. 
+      We turn ideas into beautiful functional spaces.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li>Kitchen Cabinets</li>
+        <li>Built-in Wardrobes</li>
+        <li>TV Units</li>
+        <li>Custom Furniture</li>
+      </ul>
+    </div>
+
+  
+    <div class="footer-col">
+  <h4>Contact</h4>
+
+  <div class="footer-contact-item">
+    <svg viewBox="0 0 24 24" class="footer-icon">
+      <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+    </svg>
+    <span>Gauteng, South Africa</span>
+  </div>
+
+  <div class="footer-contact-item">
+    <svg viewBox="0 0 24 24" class="footer-icon">
+      <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1-.24c1.12.37 2.33.57 3.59.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.26.2 2.47.57 3.59a1 1 0 0 1-.25 1l-2.2 2.2z"/>
+    </svg>
+    <span>+27 67 887 5167</span>
+  </div>
+
+  <div class="footer-contact-item">
+    <svg viewBox="0 0 24 24" class="footer-icon">
+      <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v.01L12 13l10-6.99V6a2 2 0 0 0-2-2zm0 4.25l-8 5.6-8-5.6V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.25z"/>
+    </svg>
+    <span>mojikajohaness@gmail.com </span>
+  </div>
+
+  <a href="https://wa.me/27678875167" target="_blank" class="social-item">
+    <svg viewBox="0 0 32 32" class="social-icon">
+      <path fill="currentColor" d="M16 .396C7.163.396 0 7.559 0 16.396c0 2.89.76 5.72 2.205 8.21L0 32l7.623-2.168a15.89 15.89 0 0 0 8.377 2.353c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.243c-2.512 0-4.973-.673-7.123-1.947l-.508-.302-4.522 1.287 1.208-4.412-.331-.519a13.36 13.36 0 0 1-2.056-7.17c0-7.42 6.038-13.457 13.457-13.457S29.582 9.156 29.582 16.576 23.544 29.64 16.125 29.64zm7.314-10.15c-.4-.2-2.364-1.166-2.73-1.298-.366-.133-.632-.2-.898.2-.266.4-1.032 1.298-1.266 1.566-.233.266-.466.3-.866.1-.4-.2-1.688-.622-3.214-1.984-1.187-1.058-1.988-2.366-2.222-2.766-.233-.4-.025-.616.175-.816.18-.18.4-.466.6-.7.2-.233.266-.4.4-.666.133-.266.066-.5-.033-.7-.1-.2-.898-2.164-1.23-2.964-.324-.78-.653-.674-.898-.686l-.766-.013c-.266 0-.7.1-1.066.5-.366.4-1.4 1.366-1.4 3.332s1.433 3.866 1.633 4.132c.2.266 2.822 4.307 6.84 6.04.956.413 1.7.66 2.28.844.958.305 1.83.262 2.52.159.77-.115 2.364-.966 2.697-1.9.333-.933.333-1.733.233-1.9-.1-.166-.366-.266-.766-.466z"/>
+    </svg>
+    <span>+27 67 887 5167</span>
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@mojikajohaness" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24" class="social-icon">
+      <path fill="currentColor" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.237V2h-3.19v13.372c0 1.83-1.484 3.314-3.314 3.314a3.314 3.314 0 0 1 0-6.628c.274 0 .54.034.795.097V8.96a6.504 6.504 0 0 0-.795-.05A6.505 6.505 0 1 0 15.82 15.37V8.977a8.003 8.003 0 0 0 4.77 1.582V7.37a4.77 4.77 0 0 1-.001-.684z"/>
+    </svg>
+    <span>@mojikajohaness</span>
+  </a>
+
+</div>
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 JoemanCraft Carpentry. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+</body>
+</html>

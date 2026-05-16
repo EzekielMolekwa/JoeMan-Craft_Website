@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Our Work</title>
+
+ 
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Joeman<span class="brand-gold">Craft</span></a>
+        <ul class="nav-links">
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+  
+  <section class="gallery-section">
+    <h1 class="gallery-title">Our Gallery</h1>
+    <p class="gallery-subtitle">
+      Real projects. Real craftsmanship.
+    </p>
+
+    <div class="gallery-grid">
+      
+      <img src="images/gallery/gallery1.jpg" alt="Project image">
+      <img src="images/gallery/gallery2.jpg" alt="Project image">
+      <img src="images/gallery/gallery3.jpg" alt="Project image">
+      <img src="images/gallery/gallery4.jpg" alt="Project image">
+      <img src="images/gallery/gallery5.jpg" alt="Project image">
+      <img src="images/gallery/gallery6.jpg" alt="Project image">
+       <img src="images/gallery/gallery7.jpg" alt="Project image">
+      <img src="images/gallery/gallery8.jpg" alt="Project image">
+      <img src="images/gallery/gallery9.jpg" alt="Project image">
+      <img src="images/gallery/gallery10.jpg" alt="Project image">
+      <img src="images/gallery/gallery11.jpg" alt="Project image">
+      <img src="images/gallery/gallery12.jpg" alt="Project image">
+       <img src="images/gallery/gallery13.jpg" alt="Project image">
+      <img src="images/gallery/gallery14.jpg" alt="Project image">
+      <img src="images/gallery/gallery15.jpg" alt="Project image">
+      <img src="images/gallery/gallery16.jpg" alt="Project image">
+      
+
+    </div>
+  </section>
+
+ 
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" />
+  </div>
+
+  
+  <script>
+    const images = document.querySelectorAll(".gallery-grid img");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.querySelector(".lightbox-img");
+    const closeBtn = document.querySelector(".lightbox-close");
+
+    images.forEach(img => {
+      img.addEventListener("click", () => {
+        lightbox.style.display = "flex";
+        lightboxImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+    });
+
+    lightbox.addEventListener("click", e => {
+      if (e.target !== lightboxImg) {
+        lightbox.style.display = "none";
+      }
+    });
+  </script>
+
+<footer class="footer">
+  <div class="footer-container">
+
+    
+    <div class="footer-col">
+      <h3 class="footer-logo">JoemanCraft Carpentry</h3>
+      <p>Crafting quality interiors with precision and passion. 
+      We turn ideas into beautiful functional spaces.</p>
+    </div>
+
+   
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+   
+    <div class="footer-col">
+      <h4>Our Services</h4>
+      <ul>
+        <li>Kitchen Cabinets</li>
+        <li>Built-in Wardrobes</li>
+        <li>TV Units</li>
+        <li>Custom Furniture</li>
+      </ul>
+    </div>
+
+    
+     <div class="footer-col">
+  <h4>Contact</h4>
+
+  <div class="footer-contact-item">
+    <svg viewBox="0 0 24 24" class="footer-icon">
+      <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+    </svg>
+    <span>Gauteng, South Africa</span>
+  </div>
+
+  <div class="footer-contact-item">
+    <svg viewBox="0 0 24 24" class="footer-icon">
+      <path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1-.24c1.12.37 2.33.57 3.59.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.07 22 2 13.93 2 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.26.2 2.47.57 3.59a1 1 0 0 1-.25 1l-2.2 2.2z"/>
+    </svg>
+    <span>+27 67 887 5167</span>
+  </div>
+
+  <div class="footer-contact-item">
+    <svg viewBox="0 0 24 24" class="footer-icon">
+      <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v.01L12 13l10-6.99V6a2 2 0 0 0-2-2zm0 4.25l-8 5.6-8-5.6V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.25z"/>
+    </svg>
+    <span>mojikajohaness@gmail.com </span>
+  </div>
+
+
+ <!-- WhatsApp -->
+  <a href="https://wa.me/27678875167" target="_blank" class="social-item">
+    <svg viewBox="0 0 32 32" class="social-icon">
+      <path fill="currentColor" d="M16 .396C7.163.396 0 7.559 0 16.396c0 2.89.76 5.72 2.205 8.21L0 32l7.623-2.168a15.89 15.89 0 0 0 8.377 2.353c8.837 0 16-7.163 16-16S24.837.396 16 .396zm0 29.243c-2.512 0-4.973-.673-7.123-1.947l-.508-.302-4.522 1.287 1.208-4.412-.331-.519a13.36 13.36 0 0 1-2.056-7.17c0-7.42 6.038-13.457 13.457-13.457S29.582 9.156 29.582 16.576 23.544 29.64 16.125 29.64zm7.314-10.15c-.4-.2-2.364-1.166-2.73-1.298-.366-.133-.632-.2-.898.2-.266.4-1.032 1.298-1.266 1.566-.233.266-.466.3-.866.1-.4-.2-1.688-.622-3.214-1.984-1.187-1.058-1.988-2.366-2.222-2.766-.233-.4-.025-.616.175-.816.18-.18.4-.466.6-.7.2-.233.266-.4.4-.666.133-.266.066-.5-.033-.7-.1-.2-.898-2.164-1.23-2.964-.324-.78-.653-.674-.898-.686l-.766-.013c-.266 0-.7.1-1.066.5-.366.4-1.4 1.366-1.4 3.332s1.433 3.866 1.633 4.132c.2.266 2.822 4.307 6.84 6.04.956.413 1.7.66 2.28.844.958.305 1.83.262 2.52.159.77-.115 2.364-.966 2.697-1.9.333-.933.333-1.733.233-1.9-.1-.166-.366-.266-.766-.466z"/>
+    </svg>
+    <span>+27 67 887 5167</span>
+  </a>
+
+  <!-- TikTok -->
+  <a href="https://www.tiktok.com/@mojikajohaness" target="_blank" class="social-item">
+    <svg viewBox="0 0 24 24" class="social-icon">
+      <path fill="currentColor" d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.237V2h-3.19v13.372c0 1.83-1.484 3.314-3.314 3.314a3.314 3.314 0 0 1 0-6.628c.274 0 .54.034.795.097V8.96a6.504 6.504 0 0 0-.795-.05A6.505 6.505 0 1 0 15.82 15.37V8.977a8.003 8.003 0 0 0 4.77 1.582V7.37a4.77 4.77 0 0 1-.001-.684z"/>
+    </svg>
+    <span>@mojikajohaness</span>
+  </a>
+
+
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 JoemanCraft Carpentry. All Rights Reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
